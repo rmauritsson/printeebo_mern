@@ -8,7 +8,6 @@ function App() {
       <main>
         <h1>Printeebo</h1>
       </main>
-      <Footer />
     </>
   );
 }
