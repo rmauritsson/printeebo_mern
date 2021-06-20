@@ -6,17 +6,27 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header_top">
-        <ul>
-          <li>HELP</li>
-          <li>TRACK ORDER</li>
-          <li>SELL YOUR ART</li>
-          <li>SIGN UP</li>
-          <li>LOGIN</li>
-        </ul>
+        <div>
+          <a href="#">Help</a>
+        </div>
+        <div>
+          <a href="#">Track Order</a>
+        </div>
+        <div>
+          <a href="#">Sell Your Art</a>
+        </div>
+        <div>
+          <a href="#">Signup</a>
+        </div>
+        <div>
+          <a href="#">Login</a>
+        </div>
       </div>
 
       <div className="header_main">
-        <div className="header_main__logo">Printeebo</div>
+        <div className="header_main__logo">
+          <img src="/images/logos-02.svg" alt="logo" />
+        </div>
         <div className="header_main_search">
           <form action="">
             <input
@@ -24,9 +34,6 @@ const Header = () => {
               placeholder="Search for t-shirts and other products"
               name="search"
             />
-            <button>
-              <VscSearch />
-            </button>
           </form>
         </div>
         <div className="header_main__explore">
@@ -36,30 +43,45 @@ const Header = () => {
             </select>
           </form>
         </div>
+
         <div className="header_main__user">
-          <div className="header_main__user__userIcon">
-            <FaUserAlt />
-          </div>
-          <div className="header_main__user__wishlist">
-            <HiOutlineHeart />
-          </div>
-          <div className="header_main__user__cart">
-            <HiOutlineShoppingCart />
-          </div>
+          <FaUserAlt />
+        </div>
+
+        <div className="header_main__user">
+          <HiOutlineHeart />
+        </div>
+
+        <div className="header_main__user">
+          <HiOutlineShoppingCart />
         </div>
       </div>
 
       <div className="header_bottom">
-        <ul>
-          <li>Clothing</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>Children</li>
-          <li>Home & Living</li>
-          <li>Accessories</li>
-          <li>Gifts</li>
-          <li>New Arrivals</li>
-        </ul>
+        <div>
+          <a href="#">Clothing</a>
+        </div>
+        <div>
+          <a href="#">Men</a>
+        </div>
+        <div>
+          <a href="#">Women</a>
+        </div>
+        <div>
+          <a href="#">Children</a>
+        </div>
+        <div>
+          <a href="#">Home & Living</a>
+        </div>
+        <div>
+          <a href="#">Accessories</a>
+        </div>
+        <div>
+          <a href="#">Gifts</a>
+        </div>
+        <div>
+          <a href="#">New Arrivals</a>
+        </div>
       </div>
     </header>
   );

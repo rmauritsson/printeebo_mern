@@ -1,12 +1,13 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Home from "./screens/HomeScreen/Home";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <h1>Printeebo</h1>
+        <Home />
       </main>
     </>
   );
