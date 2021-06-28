@@ -1,11 +1,12 @@
 import products from "../../products";
-import Product from "../../components/Product";
+import ProductCard from "../ProductScreens/ProductCard";
 import Slider from "../../components/Slider";
 import Category from "../../components/Category";
 import Brand from "../../components/Brand";
 import SellYourArtBanner from "./partials/SellYourArtBanner";
 import CreateBanner from "./partials/CreateBanner";
 import CustomCreate from "./partials/CustomCreate";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
         <div className="stores">
           <div className="stores_header">
             <h3>Featured Stores</h3>
-            <a href="#">
+            <Link to="#">
               View All{" "}
               <svg
                 width="24"
@@ -40,7 +41,7 @@ const Home = () => {
                   fill="#2E3A59"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="store_row">
@@ -57,7 +58,7 @@ const Home = () => {
           <div className="products_row">
             {products.map((product) => (
               <div className="products_column">
-                <Product product={product} />
+                <ProductCard product={product} />
               </div>
             ))}
           </div>

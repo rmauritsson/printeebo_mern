@@ -1,31 +1,33 @@
-import { VscSearch } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
 import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header_top">
         <div>
-          <a href="#">Help</a>
+          <Link to="/help">Help</Link>
         </div>
         <div>
-          <a href="#">Track Order</a>
+          <Link to="#">Track Order</Link>
         </div>
         <div>
-          <a href="#">Sell Your Art</a>
+          <Link to="/store">Sell Your Art</Link>
         </div>
         <div>
-          <a href="#">Signup</a>
+          <Link to="/signup">Signup</Link>
         </div>
         <div>
-          <a href="#">Login</a>
+          <Link to="/login">Login</Link>
         </div>
       </div>
 
       <div className="header_main">
         <div className="header_main__logo">
-          <img src="/images/logos-02.svg" alt="logo" />
+          <Link to="/">
+            <img src="/images/logos-02.svg" alt="logo" />
+          </Link>
         </div>
         <div className="header_main_search">
           <form action="">
@@ -49,38 +51,42 @@ const Header = () => {
         </div>
 
         <div className="header_main__user">
-          <HiOutlineHeart />
+          <Link to="/wishlist">
+            <HiOutlineHeart />
+          </Link>
         </div>
 
         <div className="header_main__user">
-          <HiOutlineShoppingCart />
+          <Link to="/cart">
+            <HiOutlineShoppingCart />
+          </Link>
         </div>
       </div>
 
       <div className="header_bottom">
         <div>
-          <a href="#">Clothing</a>
+          <Link to="#">Clothing</Link>
         </div>
         <div>
-          <a href="#">Men</a>
+          <Link to="#">Men</Link>
         </div>
         <div>
-          <a href="#">Women</a>
+          <Link to="#">Women</Link>
         </div>
         <div>
-          <a href="#">Children</a>
+          <Link to="#">Children</Link>
         </div>
         <div>
-          <a href="#">Home & Living</a>
+          <Link to="#">Home & Living</Link>
         </div>
         <div>
-          <a href="#">Accessories</a>
+          <Link to="#">Accessories</Link>
         </div>
         <div>
-          <a href="#">Gifts</a>
+          <Link to="#">Gifts</Link>
         </div>
         <div>
-          <a href="#">New Arrivals</a>
+          <Link to="#">New Arrivals</Link>
         </div>
       </div>
     </header>

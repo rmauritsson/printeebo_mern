@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 *,
 *:before,
 *:after {
@@ -20,7 +22,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .header {
@@ -127,10 +129,11 @@ main {
 
   .slider {
     height: 530px;
-    background-color: #142328;
+    //background-color: #142328;
     display: flex;
     align-items: center;
-    padding: 0 4rem;
+    justify-content: center;
+
     .slider_content {
       font-family: $epilogue;
       .slider_header {
@@ -251,7 +254,7 @@ main {
         .product_card {
           margin: 1rem 0;
           border-radius: 10px;
-          height: 350px;
+          height: 360px;
           width: 300px;
           margin-right: 1rem;
 
@@ -295,6 +298,248 @@ main {
       }
     }
   }
+
+  //Product Page
+
+  .product_details {
+    padding: 1rem 0;
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 10% 50% auto;
+    column-gap: 20px;
+
+    .product_details__options {
+      height: 894px;
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-rows: 50% 50%;
+      .back {
+        display: flex;
+        justify-content: center;
+
+        div {
+          width: 99px;
+          height: 99px;
+        }
+      }
+
+      .options {
+        display: grid;
+        place-items: center;
+
+        .options__img {
+          width: 99px;
+          height: 99px;
+          background-color: #f9f7f7;
+          border: #e4e7f0;
+        }
+      }
+    }
+
+    .product_details__img {
+      background-color: #f9f7f7;
+      height: 894px;
+    }
+
+    .product_details__description {
+      .description_header {
+        border-bottom: 1px solid #e4e7f0;
+        h1 {
+          font-family: $epilogue;
+          font-weight: $semibold;
+          font-size: 29px;
+          color: $fontColor;
+          padding: 1rem 0;
+        }
+      }
+
+      .description_style {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e4e7f0;
+        h3 {
+          font-weight: $semibold;
+          font-size: 19px;
+          font-family: $epilogue;
+          padding: 0.5rem;
+        }
+
+        .style_options {
+          display: flex;
+          div {
+            margin: 0 0.5rem;
+            width: 120px;
+            height: 130px;
+            border: 1px solid #e4e7f0;
+            background-color: #f9f7f7;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .description_color {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e4e7f0;
+        h3 {
+          font-weight: $semibold;
+          font-size: 19px;
+          font-family: $epilogue;
+          padding: 0.5rem;
+        }
+
+        .color_options {
+          display: flex;
+          div {
+            margin: 0 0.5rem;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #e4e7f0;
+            background-color: #f9f7f7;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .description_sizechart {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e4e7f0;
+        .sizechart__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-right: 20%;
+          h3 {
+            font-weight: $semibold;
+            font-size: 19px;
+            font-family: $epilogue;
+            padding: 0.5rem;
+          }
+
+          select {
+            color: $fontColor;
+            font-weight: $semibold;
+            font-size: 18px;
+            border: none;
+            background-color: transparent;
+            outline: none;
+          }
+        }
+
+        .sizechart__body {
+          display: flex;
+          div {
+            margin: 0 0.5rem;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #f9f7f7;
+            color: $fontColor;
+            font-size: 16px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+          }
+        }
+      }
+
+      .description_cartinfo {
+        padding: 0.25rem;
+        display: flex;
+        select {
+          padding: 8px;
+          margin-right: 10px;
+          border: 1px solid #3399ff;
+          border-radius: 5px;
+          background-color: transparent;
+          outline: none;
+        }
+
+        button {
+          text-transform: uppercase;
+          font-weight: $semibold;
+          font-size: 16px;
+          background-color: #3399ff;
+          padding: 0 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          outline: none;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          svg {
+            margin-left: 0.25rem;
+            path {
+              fill: white;
+            }
+          }
+        }
+      }
+
+      .description_meta {
+        .meta_header {
+          padding: 0.5rem 0;
+          h4 {
+            font-weight: $semibold;
+            font-family: $epilogue;
+            color: $fontColor;
+            font-size: 19px;
+          }
+
+          p {
+            padding: 0.25rem 0;
+            font-weight: $light;
+            font-size: 18px;
+          }
+        }
+        .meta_description {
+          padding: 0.5rem 0;
+          h4 {
+            font-weight: $semibold;
+            font-family: $epilogue;
+            color: $fontColor;
+            font-size: 19px;
+            display: flex;
+
+            align-items: center;
+          }
+
+          ul {
+            margin-left: 1rem;
+            font-weight: $light;
+            font-size: 18px;
+            color: $fontColor;
+
+            li {
+              margin-top: 00.5rem;
+            }
+          }
+        }
+        .meta_footer {
+          padding: 0.5rem 0;
+          h4 {
+            font-weight: $semibold;
+            font-family: $epilogue;
+            color: $fontColor;
+            font-size: 19px;
+            display: flex;
+
+            align-items: center;
+          }
+
+          p {
+            padding: 0.25rem 0;
+            font-weight: $light;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  //End of Product Page
 
   .stores {
     margin: 2.5rem 0;

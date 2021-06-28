@@ -1,6 +1,4 @@
-import products from "../products";
-
-const Product = ({ product }) => {
+const ProductCard = ({ product }) => {
   return (
     <div className="product_card">
       <div className="product_card__img">
@@ -40,4 +38,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductCard;

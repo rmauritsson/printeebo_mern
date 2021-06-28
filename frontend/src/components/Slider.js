@@ -1,6 +1,7 @@
 const Slider = () => {
   return (
     <div className="slider">
+      {/* A JSX comment 
       <div className="slider_content">
         <div className="slider_header">
           Sell your art online. <br />
@@ -26,6 +27,8 @@ const Slider = () => {
           </svg>
         </button>
       </div>
+      */}
+      <img src="/images/sell.jpg" alt="slider" />
     </div>
   );
 };
