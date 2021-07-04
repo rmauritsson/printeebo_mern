@@ -1,0 +1,25 @@
+{
+  "name": "printeebo_mern",
+  "version": "1.0.0",
+  "description": "Printeebo Eccommerce Shopping Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmauritsson/printeebo_mern.git"
+  },
+  "author": "Leonard Rwai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmauritsson/printeebo_mern/issues"
+  },
+  "homepage": "https://github.com/rmauritsson/printeebo_mern#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
