@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import products from "../../products";
 
-const Product = () => {
+const Product = ({ match }) => {
+  const product = products.find((prod) => prod._id === match.params.id);
+
   return (
     <div className="product_details">
       <div className="product_details__options">
         <div className="back">
           <div>
-            <Link to="">
+            <Link to="/">
               <svg
                 width="24"
                 height="24"
@@ -23,18 +26,26 @@ const Product = () => {
           </div>
         </div>
         <div className="options">
-          <div className="options__img"></div>
-          <div className="options__img"></div>
-          <div className="options__img"></div>
+          <div className="options__img">
+            <img src={product.image} alt="product" />
+          </div>
+          <div className="options__img">
+            <img src={product.image} alt="product" />
+          </div>
+          <div className="options__img">
+            <img src={product.image} alt="product" />
+          </div>
         </div>
       </div>
 
-      <div className="product_details__img">Product Image</div>
+      <div className="product_details__img">
+        <img src={product.image} alt="product" fluid />
+      </div>
       <div className="product_details__description">
         <div className="description_header">
-          <h1>Bakiga are gold T-shirt</h1>
+          <h1>{product.name}</h1>
           <p>
-            By <span>Bakiga Nation</span>
+            By <span>{product.store}</span>
           </p>
           <h1>UGX 25000</h1>
         </div>
