@@ -2,7 +2,7 @@ const CreateBanner = () => {
   return (
     <div className="banner">
       <div className="banner_list">
-        <img src="/images/placeholder.png" alt="banner" />
+        <img src="/images/time_Saving.jpg" alt="banner" />
         <h1>Time Saving</h1>
         <p>
           We handle receiving of orders, production and delivery without your
@@ -11,7 +11,7 @@ const CreateBanner = () => {
         </p>
       </div>
       <div className="banner_list_middle">
-        <img src="/images/placeholder.png" alt="banner" />
+        <img src="/images/ready_to_sell.jpg" alt="banner" />
         <div className="banner_list_middle__inner">
           <h3>Ready to Sale Your Art?</h3>
           <button>
@@ -32,7 +32,7 @@ const CreateBanner = () => {
         </div>
       </div>
       <div className="banner_list">
-        <img src="/images/placeholder.png" alt="banner" />
+        <img src="/images/no_inventory.jpg" alt="banner" />
         <h1>No Inventory</h1>
         <p>
           Orders are printed on demand. So no need to stock up inventory. Also

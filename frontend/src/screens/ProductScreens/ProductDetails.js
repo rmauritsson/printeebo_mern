@@ -1,8 +1,20 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import products from "../../products";
+import axios from "axios";
 
 const Product = ({ match }) => {
-  const product = products.find((prod) => prod._id === match.params.id);
+  //const product = products.find((prod) => prod._id === match.params.id);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+
+      setProduct(data);
+    };
+
+    fetchProduct();
+  }, [match]);
 
   return (
     <div className="product_details">

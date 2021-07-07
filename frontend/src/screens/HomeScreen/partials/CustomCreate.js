@@ -10,7 +10,7 @@ const CustomCreate = () => {
         <button>Create your Official Store</button>
       </div>
       <div className="custom_create_right">
-        <img src="/images/placeholder.png" alt="banner" />
+        <img src="/images/AVARC.jpg" alt="banner" />
       </div>
     </div>
   );

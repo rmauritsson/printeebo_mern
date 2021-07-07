@@ -29,22 +29,22 @@ const SellYourArtBanner = () => {
       </div>
       <div className="sale_banner__right">
         <div className="banner_list">
-          <img src="/images/placeholder.png" alt="banner" />
+          <img src="/images/steps-01.png" alt="banner" />
           <p>You a create an awesome design and upload it</p>
         </div>
 
         <div className="banner_list">
-          <img src="/images/placeholder.png" alt="banner" />
+          <img src="/images/steps-02.png" alt="banner" />
           <p>Share the links to your online shop with your community</p>
         </div>
 
         <div className="banner_list">
-          <img src="/images/placeholder.png" alt="banner" />
+          <img src="/images/steps-03.png" alt="banner" />
           <p>Orders are made and we produce and deliver them responsibly </p>
         </div>
 
         <div className="banner_list">
-          <img src="/images/placeholder.png" alt="banner" />
+          <img src="/images/steps-04.png" alt="banner" />
           <p>
             You earn from your art and the world is blessed with an awesome
             printable of your creation.

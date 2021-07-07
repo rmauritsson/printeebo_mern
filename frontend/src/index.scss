@@ -134,43 +134,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    .slider_content {
-      font-family: $epilogue;
-      .slider_header {
-        font-size: 71px;
-        color: #58c0d0;
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
-      .slider_body {
-        font-size: 29px;
-        color: white;
-        font-weight: 500;
-        margin-bottom: 20px;
-      }
-
-      button {
-        padding: 10px 30px;
-        border: 1px solid #0000ff;
-        border-radius: 30px;
-        color: white;
-        font-weight: 600;
-        font-size: 19px;
-        background-color: #0000ff;
-        display: flex;
-        justify-content: center;
-
-        img {
-          width: 30px;
-          height: 24px;
-        }
-
-        svg {
-          path {
-            fill: white;
-          }
-        }
-      }
+    img {
     }
   }
 
@@ -243,6 +207,35 @@ main {
       font-weight: $semibold;
       font-size: 29px;
       color: $fontColor;
+    }
+
+    .products_header {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        font-family: $epilogue;
+        font-weight: $semibold;
+        font-size: 29px;
+        color: $fontColor;
+      }
+
+      a {
+        color: #0000ff;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+
+        svg {
+          path {
+            fill: #0000ff;
+          }
+        }
+      }
     }
 
     .products_row {
@@ -744,7 +737,6 @@ main {
           z-index: 1;
           position: absolute;
           bottom: 0;
-          right: 10%;
           left: 20%;
           transform: translate(-10%, -20%);
 
