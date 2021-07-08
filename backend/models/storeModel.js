@@ -15,8 +15,8 @@ const storeSchema = mongoose.Schema(
     },
     socialMedia: [
       {
-        name: { type: String },
-        url: { type: String },
+        name: { type: String, default: "facebook" },
+        url: { type: String, default: "#" },
       },
     ],
   },
