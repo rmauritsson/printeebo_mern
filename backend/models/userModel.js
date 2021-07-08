@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema(
     isBuyer: {
       type: Boolean,
       required: true,
-      default: true,
+      default: false,
     },
   },
   {
