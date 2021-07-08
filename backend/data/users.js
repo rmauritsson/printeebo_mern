@@ -12,14 +12,14 @@ const users = [
     name: "John Snow",
     email: "rwaizone@gmail.com",
     password: bcrypt.hashSync("password", 10),
-    isBuyer: true,
+    isCreator: true,
     phone: "+256889914434",
   },
   {
     name: "Robert Barathoen",
     email: "abk@avarc.co",
     password: bcrypt.hashSync("password", 10),
-    isCreator: true,
+    isBuyer: true,
     phone: "+256889914434",
   },
 ];
