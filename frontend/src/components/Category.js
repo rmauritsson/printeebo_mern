@@ -12,6 +12,7 @@ const Category = ({ product }) => {
       <div className="category_card__body">
         <Link to={`/product/${product._id}`}>
           <strong>SHOP {product.category}'S</strong>
+          {console.log("Checking", product)}
         </Link>
       </div>
     </div>
