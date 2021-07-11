@@ -11,17 +11,33 @@ import axios from "axios";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [stores, setStores] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       //const response.data = await axios.get('/api/products')
       //destructure
       const { data } = await axios.get("/api/products");
-      console.log(data);
+      console.log("Products", data);
       setProducts(data);
     };
 
+    const fetchCategories = async () => {
+      const { data } = await axios.get("/api/categories");
+      console.log("Categories", data);
+      setCategories(data);
+    };
+
+    const fetchStores = async () => {
+      const { data } = await axios.get("/api/stores");
+      console.log("Stores", data);
+      setStores(data);
+    };
+
+    fetchCategories();
     fetchProducts();
+    fetchStores();
   }, []);
 
   return (
@@ -31,9 +47,9 @@ const Home = () => {
         <div className="categories">
           <h3>Product Range</h3>
           <div className="category_row">
-            {products.map((product) => (
+            {categories.map((category) => (
               <div className="category_column">
-                <Category product={product} />
+                <Category category={category} />
               </div>
             ))}
           </div>
@@ -60,9 +76,9 @@ const Home = () => {
           </div>
 
           <div className="store_row">
-            {products.map((product) => (
+            {stores.map((store) => (
               <div className="store_column">
-                <Brand product={product} />
+                <Brand store={store} />
               </div>
             ))}
           </div>

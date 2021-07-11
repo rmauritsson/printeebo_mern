@@ -1,17 +1,17 @@
-const Brand = ({ product }) => {
+const Brand = ({ store }) => {
   return (
     <div className="store_card">
       <div className="store_card__img">
-        <a href={`/product/${product._id}`}>
-          <img src={product.storeImage} alt="" />
+        <a href={`/product/${store._id}`}>
+          <img src={store.logo} alt="" />
         </a>
       </div>
 
       <div className="store_card__body">
         <p>Official Store</p>
         <p>
-          <a href={`/product/${product._id}`}>
-            <strong>{product.store}</strong>
+          <a href={`/product/${store._id}`}>
+            <strong>{store.name}</strong>
           </a>
         </p>
       </div>

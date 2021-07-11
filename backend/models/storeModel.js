@@ -6,7 +6,10 @@ const storeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
+    logo: {
+      type: String,
+    },
+    banner: {
       type: String,
     },
     description: {

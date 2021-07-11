@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 
-const Category = ({ product }) => {
+const Category = ({ category }) => {
   return (
-    <div className="category_card" key={product._id}>
+    <div className="category_card" key={category._id}>
       <div className="category_card__img">
-        <Link to={`/product/${product._id}`}>
-          <img src={product.storeImage} alt="" />
+        <Link to={`/product/${category._id}`}>
+          <img src={category.image} alt="" />
         </Link>
       </div>
 
       <div className="category_card__body">
-        <Link to={`/product/${product._id}`}>
-          <strong>SHOP {product.category}'S</strong>
-          {console.log("Checking", product)}
+        <Link to={`/product/${category._id}`}>
+          <strong>SHOP {category.name}'S</strong>
         </Link>
       </div>
     </div>
