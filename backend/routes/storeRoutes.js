@@ -29,7 +29,8 @@ storeRouter.get(
     if (store) {
       res.json(store);
     } else {
-      res.status(404).json({ message: "Store not found" });
+      res.status(404);
+      throw new Error("Store not found");
     }
   })
 );

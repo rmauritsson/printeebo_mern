@@ -29,7 +29,8 @@ categoryRouter.get(
     if (category) {
       res.json(category);
     } else {
-      res.status(404).json({ message: "Category not found" });
+      res.status(404);
+      throw new Error("Category not found");
     }
   })
 );
