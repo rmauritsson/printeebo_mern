@@ -2,14 +2,14 @@ import {
   STORE_LIST_REQUEST,
   STORE_LIST_SUCCESS,
   STORE_LIST_FAIL,
-} from "../actions/STOREActions";
+} from "../actions/types";
 
 const storeReducer = (state = { stores: [] }, action) => {
   switch (action.type) {
     case STORE_LIST_REQUEST:
-      return { laoding: true, state };
+      return { laoding: true, stores: [] };
     case STORE_LIST_SUCCESS:
-      return { loading: false, state: action.payload };
+      return { loading: false, stores: action.payload };
     case STORE_LIST_FAIL:
       return { loading: false, error: action.payload };
 

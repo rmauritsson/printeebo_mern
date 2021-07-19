@@ -5,8 +5,6 @@ const products = [
     image: "/images/mocks-01.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Red",
-    size: "M",
     price: 89.99,
   },
   {
@@ -15,8 +13,7 @@ const products = [
     image: "/images/mocks-02.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Yellow",
-    size: "S",
+
     price: 89.99,
   },
   {
@@ -25,8 +22,7 @@ const products = [
     style: "Short Sleeved V-Neck",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Red",
-    size: "M",
+
     price: 89.99,
   },
   {
@@ -35,8 +31,7 @@ const products = [
     style: "Long Sleeved V-Neck",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Red",
-    size: "M",
+
     price: 89.99,
   },
   {
@@ -45,8 +40,7 @@ const products = [
     style: "Short Sleeved",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Green",
-    size: "L",
+
     price: 849.99,
   },
   {
@@ -55,8 +49,7 @@ const products = [
     image: "/images/mocks-06.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum! Provident similique accusantium nemo autem.",
-    color: "Red",
-    size: "XL",
+
     price: 589.99,
   },
 ];

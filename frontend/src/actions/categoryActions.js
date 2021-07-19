@@ -1,25 +1,25 @@
 import axios from "axios";
 import {
-  STORE_LIST_REQUEST,
-  STORE_LIST_SUCCESS,
-  STORE_LIST_FAIL,
+  CATEGORY_LIST_REQUEST,
+  CATEGORY_LIST_SUCCESS,
+  CATEGORY_LIST_FAIL,
 } from "./types";
 
-export const listStores = () => async (dispatch) => {
+export const listCategories = () => async (dispatch) => {
   try {
     dispatch({
-      type: STORE_LIST_REQUEST,
+      type: CATEGORY_LIST_REQUEST,
     });
 
-    const { data } = await axios.get("/api/stores");
+    const { data } = await axios.get("/api/categories");
 
     dispatch({
-      type: STORE_LIST_SUCCESS,
+      type: CATEGORY_LIST_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: STORE_LIST_FAIL,
+      type: CATEGORY_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

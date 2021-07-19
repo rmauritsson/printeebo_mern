@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../ProductScreens/ProductCard";
 import Slider from "../../components/Slider";
 import Category from "../../components/Category";
@@ -7,38 +8,22 @@ import SellYourArtBanner from "./partials/SellYourArtBanner";
 import CreateBanner from "./partials/CreateBanner";
 import CustomCreate from "./partials/CustomCreate";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { listProducts } from "../../actions/productActions";
+import { listCategories } from "../../actions/categoryActions";
+import { listStores } from "../../actions/storeActions";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [stores, setStores] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      //const response.data = await axios.get('/api/products')
-      //destructure
-      const { data } = await axios.get("/api/products");
-      console.log("Products", data);
-      setProducts(data);
-    };
+    dispatch(listProducts());
+    dispatch(listCategories());
+    dispatch(listStores());
+  }, [dispatch]);
 
-    const fetchCategories = async () => {
-      const { data } = await axios.get("/api/categories");
-      console.log("Categories", data);
-      setCategories(data);
-    };
-
-    const fetchStores = async () => {
-      const { data } = await axios.get("/api/stores");
-      console.log("Stores", data);
-      setStores(data);
-    };
-
-    fetchCategories();
-    fetchProducts();
-    fetchStores();
-  }, []);
+  const products = [];
+  const categories = [];
+  const stores = [];
 
   return (
     <>
