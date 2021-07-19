@@ -38,10 +38,6 @@ const orderSchema = mongoose.Schema(
       email_address: { type: String },
       phone_number: { type: String },
     },
-    paymentMethod: {
-      type: String,
-      required: true,
-    },
     taxPrice: {
       type: Number,
       required: true,
@@ -49,9 +45,10 @@ const orderSchema = mongoose.Schema(
     },
     discountPrice: {
       type: Number,
-      required: true,
-      code: String,
       default: 0.0,
+    },
+    discountCode: {
+      type: String,
     },
     shippingPrice: {
       type: Number,
