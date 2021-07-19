@@ -15,15 +15,26 @@ import { listStores } from "../../actions/storeActions";
 const Home = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(listProducts());
-    dispatch(listCategories());
-    dispatch(listStores());
-  }, [dispatch]);
+  const storeList = useSelector((state) => state.storeList);
+  const stores = storeList.stores;
+  const storesLoaded = storeList.loading;
+  const storesError = storeList.error;
 
-  const products = [];
-  const categories = [];
-  const stores = [];
+  const categoryList = useSelector((state) => state.categoryList);
+  const categories = categoryList.categories;
+  const categoriesLoaded = categoryList.loading;
+  const categoriesError = categoryList.error;
+
+  const productList = useSelector((state) => state.productList);
+  const products = productList.products;
+  const productsLoaded = productList.loading;
+  const productsError = productList.error;
+
+  useEffect(() => {
+    dispatch(listStores());
+    dispatch(listCategories());
+    dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <>
@@ -31,13 +42,19 @@ const Home = () => {
       <div className="home_wrapper">
         <div className="categories">
           <h3>Product Range</h3>
-          <div className="category_row">
-            {categories.map((category) => (
-              <div className="category_column">
-                <Category category={category} />
-              </div>
-            ))}
-          </div>
+          {categoriesLoaded ? (
+            <h2>Loading ...... </h2>
+          ) : categoriesError ? (
+            <h2>{categoriesError}</h2>
+          ) : (
+            <div className="category_row">
+              {categories.map((category) => (
+                <div key={category._id} className="category_column">
+                  <Category category={category} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="stores">
@@ -60,13 +77,19 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="store_row">
-            {stores.map((store) => (
-              <div className="store_column">
-                <Brand store={store} />
-              </div>
-            ))}
-          </div>
+          {storesLoaded ? (
+            <h2>Loading.....</h2>
+          ) : storesError ? (
+            <h2>{storesError}</h2>
+          ) : (
+            <div className="store_row">
+              {stores.map((store) => (
+                <div key={store._id} className="store_column">
+                  <Brand store={store} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="products">
@@ -88,13 +111,20 @@ const Home = () => {
               </svg>
             </Link>
           </div>
-          <div className="products_row">
-            {products.map((product) => (
-              <div className="products_column">
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+
+          {productsLoaded ? (
+            <h2>Loading ...... </h2>
+          ) : productsError ? (
+            <h2>{productsError}</h2>
+          ) : (
+            <div className="products_row">
+              {products.map((product) => (
+                <div key={product._id} className="products_column">
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="sale">

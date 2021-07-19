@@ -1,6 +1,6 @@
 const ProductCard = ({ product }) => {
   return (
-    <div className="product_card" key={product._id}>
+    <div className="product_card">
       <div className="product_card__img">
         <a href={`/product/${product._id}`}>
           <img src={product.image} alt="" />
