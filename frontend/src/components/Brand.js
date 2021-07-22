@@ -2,7 +2,7 @@ const Brand = ({ store }) => {
   return (
     <div className="store_card">
       <div className="store_card__img">
-        <a href={`/product/${store._id}`}>
+        <a href={`/store/${store._id}`}>
           <img src={store.logo} alt="" />
         </a>
       </div>
@@ -10,7 +10,7 @@ const Brand = ({ store }) => {
       <div className="store_card__body">
         <p>Official Store</p>
         <p>
-          <a href={`/product/${store._id}`}>
+          <a href={`/store/${store._id}`}>
             <strong>{store.name}</strong>
           </a>
         </p>
