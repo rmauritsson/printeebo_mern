@@ -375,10 +375,10 @@ main {
     column-gap: 20px;
 
     .product_details__options {
-      height: 894px;
+      //height: 894px;
       display: grid;
       grid-auto-flow: row;
-      grid-template-rows: 50% 50%;
+      grid-template-rows: 20% 50%;
       .back {
         display: flex;
         justify-content: center;
@@ -408,12 +408,12 @@ main {
     }
 
     .product_details__img {
-      background-color: #f9f7f7;
-      height: 894px;
+      //background-color: #f9f7f7;
+      //height: 894px;
 
       img {
         width: 100%;
-        height: 100%;
+        //height: 100%;
       }
     }
 

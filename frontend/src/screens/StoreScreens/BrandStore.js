@@ -1,6 +1,27 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../ProductScreens/ProductCard";
+import { listProducts } from "../../actions/productActions";
 
-const Store = ({ store }) => {
+const Store = ({ match }) => {
+  const dispatch = useDispatch();
+
+  const productList = useSelector((state) => state.productList);
+
+  const { loading, products, error } = productList;
+
+  useEffect(() => {
+    dispatch(listProducts());
+    //dispatch(listStoreDetails(product.store));
+
+    console.log("Mtch", products);
+
+    const storeList = products.filter(
+      (product) => product.store === match.params.id
+    );
+    console.log("Found Match", storeList);
+  }, [match, dispatch]);
+
   return (
     <div className="store_details">
       <div className="store_banner">

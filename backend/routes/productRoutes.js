@@ -24,7 +24,12 @@ productRouter.get(
 productRouter.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).populate({
+      path: "store",
+      model: "Store",
+    });
+
+    console.log("Product in Backend", product);
 
     if (product) {
       res.json(product);
