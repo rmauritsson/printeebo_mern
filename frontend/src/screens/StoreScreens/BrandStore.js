@@ -1,31 +1,33 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../ProductScreens/ProductCard";
-import { listProducts } from "../../actions/productActions";
+import { listStoreDetails } from "../../actions/storeActions";
 
 const Store = ({ match }) => {
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
+  const storeDetails = useSelector((state) => state.storeDetails);
 
-  const { loading, products, error } = productList;
+  const { loading, store, error } = storeDetails;
+  console.log("Store Found", store);
 
   useEffect(() => {
-    dispatch(listProducts());
-    //dispatch(listStoreDetails(product.store));
+    //dispatch(listProducts());
+    dispatch(listStoreDetails(match.params.id));
 
-    console.log("Mtch", products);
+    console.log("Store ID", match.params.id);
 
-    const storeList = products.filter(
-      (product) => product.store === match.params.id
-    );
-    console.log("Found Match", storeList);
-  }, [match, dispatch]);
+    // const storeList = products.filter(
+    // (product) => product.store === match.params.id
+    //);
+    //console.log("Found Match", storeList);
+  }, [match]);
 
   return (
     <div className="store_details">
       <div className="store_banner">
-        <h1>Bakiga Nation</h1>
+        <h1>{loading ? "" : store.name}</h1>
+        <p>{loading ? "" : store.description}</p>
       </div>
       <div className="store_filters">
         <div>

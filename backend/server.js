@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import colors from "colors";
 
 import productRouter from "./routes/productRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
@@ -34,5 +35,8 @@ app.use((err, req, res, next) => {
 
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port: ${PORT}`)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port: ${PORT}`.yellow
+      .bold
+  )
 );

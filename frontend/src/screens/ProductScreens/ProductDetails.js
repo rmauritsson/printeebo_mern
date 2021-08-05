@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions";
-import { listStoreDetails } from "../../actions/storeActions";
 
 const Product = ({ match }) => {
   //const product = products.find((prod) => prod._id === match.params.id);
@@ -10,17 +9,16 @@ const Product = ({ match }) => {
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
-  //const storeDetails = useSelector((state) => state.storeDetails);
 
-  const { product, loading } = productDetails;
-  //const { store, loading } = storeDetails;
+  const { product, loading, error } = productDetails;
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
     //dispatch(listStoreDetails(product.store));
 
     console.log("Product Store", product);
-  }, [dispatch, match]);
+    console.log("Loading state", loading);
+  }, [dispatch]);
 
   return (
     <div>
@@ -66,7 +64,19 @@ const Product = ({ match }) => {
           <div className="product_details__description">
             <div className="description_header">
               <h1>{product.name}</h1>
-              {/* <p>By {product.store.name}</p>*/}
+              {/**
+   * 
+              {productDetails ? (
+                loading ? (
+                  "true"
+                ) : (
+                  <p>By {product.store.name}</p>
+                )
+              ) : (
+                "not loaded"
+              )}
+
+   */}
               <h1>UGX {product.price}</h1>
             </div>
             <div className="description_style">

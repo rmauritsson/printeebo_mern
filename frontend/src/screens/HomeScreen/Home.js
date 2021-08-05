@@ -35,7 +35,7 @@ const Home = () => {
     dispatch(listStores());
     dispatch(listCategories());
     dispatch(listProducts());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
