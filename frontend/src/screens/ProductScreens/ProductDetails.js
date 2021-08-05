@@ -4,7 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions";
 
 const Product = ({ match }) => {
-  //const product = products.find((prod) => prod._id === match.params.id);
+  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
+  const [style, setStyle] = useState("");
+
+  const orderRequirements = {
+    quantity: quantity,
+    size: size,
+    color: color,
+    style: style,
+  };
 
   const dispatch = useDispatch();
 
@@ -16,9 +26,20 @@ const Product = ({ match }) => {
     dispatch(listProductDetails(match.params.id));
     //dispatch(listStoreDetails(product.store));
 
-    console.log("Product Store", product);
-    console.log("Loading state", loading);
-  }, [dispatch]);
+    // console.log("Product Store", product);
+    //console.log("Loading state", loading);
+    console.log("Order Requirements", orderRequirements);
+  }, [dispatch, size, quantity, color, style]);
+
+  const handleQtyChange = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const handleColorChange = (event) => {};
+
+  const handleSizeChange = (event) => {};
+
+  const handleStyleChange = (event) => {};
 
   return (
     <div>
@@ -116,8 +137,17 @@ const Product = ({ match }) => {
               </div>
             </div>
             <div className="description_cartinfo">
-              <select name="quantity" id="quantity">
-                <option value="volvo">1</option>
+              <select
+                name="quantity"
+                id="quantity"
+                value={quantity}
+                onChange={handleQtyChange}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
               <button>
                 Add to cart
