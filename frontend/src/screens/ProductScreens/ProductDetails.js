@@ -5,7 +5,6 @@ import { listProductDetails } from "../../actions/productActions";
 
 const Product = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
-  const [isAdult, setIsAdult] = useState(true);
   const [size, setSize] = useState("");
   const [chart, setChart] = useState("Adult");
   const [color, setColor] = useState("");
@@ -41,6 +40,8 @@ const Product = ({ match }) => {
     },
   ];
 
+  const styleOptions = ["V-Neck", "Round-Neck", "Long Sleeves"];
+
   const orderRequirements = {
     quantity: quantity,
     chart: chart,
@@ -66,7 +67,7 @@ const Product = ({ match }) => {
   useEffect(() => {
     console.log("Order Requirements", orderRequirements);
     //console.log("selected size", size);
-  }, [chart, color]);
+  }, [chart, color, style, quantity]);
 
   const handleQtyChange = (e) => {
     setQuantity(e.target.value);
@@ -85,7 +86,9 @@ const Product = ({ match }) => {
     setSize(event.target.value);
   };
 
-  const handleStyleChange = (event) => {};
+  const handleStyleChange = (event) => {
+    setStyle(event.target.value);
+  };
 
   return (
     <div>
@@ -149,9 +152,14 @@ const Product = ({ match }) => {
             <div className="description_style">
               <h3>Style</h3>
               <div className="style_options">
-                <div></div>
-                <div></div>
-                <div></div>
+                {styleOptions.map((style) => (
+                  <div key={style} onChange={handleStyleChange}>
+                    <input type="radio" id={style} value={style} name="style" />
+                    <label className={style} htmlFor={style}>
+                      {style}
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="description_color">

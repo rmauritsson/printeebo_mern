@@ -442,14 +442,28 @@ main {
         }
 
         .style_options {
-          display: flex;
+          display: inline-flex;
+
           div {
-            margin: 0 0.5rem;
-            width: 120px;
-            height: 130px;
-            border: 1px solid #e4e7f0;
-            background-color: #f9f7f7;
-            border-radius: 10px;
+            margin: 10px 0.5rem;
+
+            input[type="radio"] {
+              display: none;
+            }
+
+            label {
+              padding: 0.5rem 0.8rem;
+              border-radius: 10px;
+              border: 1px solid #f9f7f7;
+              cursor: pointer;
+              width: 30px;
+              height: 30px;
+            }
+
+            input[type="radio"]:checked + label {
+              border: 1px solid #3399ff;
+              color: #3399ff;
+            }
           }
         }
       }
