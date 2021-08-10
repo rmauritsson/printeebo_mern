@@ -5,12 +5,45 @@ import { listProductDetails } from "../../actions/productActions";
 
 const Product = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
+  const [isAdult, setIsAdult] = useState(true);
   const [size, setSize] = useState("");
+  const [chart, setChart] = useState("Adult");
   const [color, setColor] = useState("");
   const [style, setStyle] = useState("");
 
+  const colorOptions = [
+    {
+      label: "Green",
+      value: "green",
+    },
+    {
+      label: "Red",
+      value: "red",
+    },
+    {
+      label: "Blue",
+      value: "blue",
+    },
+    {
+      label: "Yellow",
+      value: "yellow",
+    },
+  ];
+
+  const sizeOptions = [
+    {
+      label: "Adult",
+      chart: ["XS", "S", "M", "L", "XL", "XXL"],
+    },
+    {
+      label: "Children",
+      chart: ["S", "M", "L"],
+    },
+  ];
+
   const orderRequirements = {
     quantity: quantity,
+    chart: chart,
     size: size,
     color: color,
     style: style,
@@ -28,16 +61,29 @@ const Product = ({ match }) => {
 
     // console.log("Product Store", product);
     //console.log("Loading state", loading);
+  }, []);
+
+  useEffect(() => {
     console.log("Order Requirements", orderRequirements);
-  }, [dispatch, size, quantity, color, style]);
+    //console.log("selected size", size);
+  }, [chart, color]);
 
   const handleQtyChange = (e) => {
     setQuantity(e.target.value);
   };
 
-  const handleColorChange = (event) => {};
+  const handleColorChange = (event) => {
+    setColor(event.target.value);
+  };
 
-  const handleSizeChange = (event) => {};
+  const handleSizeChartChange = (event) => {
+    setChart(event.target.value);
+  };
+
+  const handleSizeChange = (event) => {
+    console.log("You have selected", event.target.value);
+    setSize(event.target.value);
+  };
 
   const handleStyleChange = (event) => {};
 
@@ -110,30 +156,64 @@ const Product = ({ match }) => {
             </div>
             <div className="description_color">
               <h3>Color</h3>
-              <div className="color_options">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+              <div className="colorOptions">
+                {colorOptions.map((color) => (
+                  <div key={color.value} onChange={handleColorChange}>
+                    <input
+                      type="radio"
+                      id={color.value}
+                      value={color.value}
+                      name="color"
+                    />
+                    <label className={color.value} htmlFor={color.value}>
+                      {color.label}
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
+
             <div className="description_sizechart">
               <div className="sizechart__header">
                 <h3>Size</h3>
                 <div>
-                  <select name="size" id="size">
-                    <option value="volvo">Adult</option>
+                  <select
+                    name="size"
+                    id="size"
+                    onChange={handleSizeChartChange}
+                  >
+                    {sizeOptions.map((option) => (
+                      <option key={option.label} value={option.label}>
+                        {option.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
               <div className="sizechart__body">
-                <div>XS</div>
-                <div>S</div>
-                <div>M</div>
-                <div>L</div>
-                <div>XL</div>
-                <div>XXL</div>
+                {chart === "Adult"
+                  ? sizeOptions[0].chart.map((chart) => (
+                      <div key={chart} onChange={handleSizeChange}>
+                        <input
+                          type="radio"
+                          id={chart}
+                          value={chart}
+                          name="size"
+                        />
+                        <label htmlFor={chart}> {chart}</label>
+                      </div>
+                    ))
+                  : sizeOptions[1].chart.map((chart) => (
+                      <div key={chart} onChange={handleSizeChange}>
+                        <input
+                          type="radio"
+                          id={chart}
+                          value={chart}
+                          name="size"
+                        />
+                        <label htmlFor={chart}> {chart}</label>
+                      </div>
+                    ))}
               </div>
             </div>
             <div className="description_cartinfo">

@@ -199,13 +199,15 @@ main {
   //Products
 
   .slider {
-    height: 530px;
-    //background-color: #142328;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
     img {
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -462,15 +464,29 @@ main {
           padding: 0.5rem;
         }
 
-        .color_options {
-          display: flex;
+        .colorOptions {
+          display: inline-flex;
+
           div {
-            margin: 0 0.5rem;
-            width: 30px;
-            height: 30px;
-            border: 1px solid #e4e7f0;
-            background-color: #f9f7f7;
-            border-radius: 50%;
+            margin: 10px 0.5rem;
+
+            input[type="radio"] {
+              display: none;
+            }
+
+            label {
+              padding: 0.5rem 0.8rem;
+              border-radius: 10px;
+              border: 1px solid #f9f7f7;
+              cursor: pointer;
+              width: 30px;
+              height: 30px;
+            }
+
+            input[type="radio"]:checked + label {
+              border: 1px solid #3399ff;
+              color: #3399ff;
+            }
           }
         }
       }
@@ -501,17 +517,32 @@ main {
         }
 
         .sizechart__body {
-          display: flex;
+          display: inline-flex;
           div {
-            margin: 0 0.5rem;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #f9f7f7;
-            color: $fontColor;
-            font-size: 16px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
+            margin: 10px 0.5rem;
+
+            // border: 1px solid #f9f7f7;
+            //color: $fontColor;
+            //font-size: 16px;
+            //border-radius: 10px;
+            //display: grid;
+            //place-items: center;
+
+            input[type="radio"] {
+              display: none;
+            }
+
+            label {
+              padding: 0.5rem 0.8rem;
+              border-radius: 10px;
+              border: 1px solid #f9f7f7;
+              cursor: pointer;
+            }
+
+            input[type="radio"]:checked + label {
+              border: 1px solid #3399ff;
+              color: #3399ff;
+            }
           }
         }
       }
@@ -734,12 +765,12 @@ main {
         padding: 1rem 0;
         font-family: $epilogue;
         font-weight: $semibold;
-        font-size: 71px;
+        font-size: 60px;
         color: $fontColor;
       }
 
       p {
-        font-size: 29px;
+        font-size: 23px;
         font-weight: $normal;
         color: $fontColor;
       }
@@ -785,11 +816,11 @@ main {
         h1 {
           padding: 1rem 0;
           font-weight: $semibold;
-          font-size: 50px;
+          font-size: 35px;
         }
 
         p {
-          font-size: 29px;
+          font-size: 23px;
           font-weight: $normal;
         }
       }
@@ -855,14 +886,14 @@ main {
       .custom_create_left {
         position: relative;
         h1 {
-          font-size: 71px;
+          font-size: 40px;
           padding: 1rem 0;
           font-weight: $semibold;
           font-family: $epilogue;
         }
 
         p {
-          font-size: 30px;
+          font-size: 23px;
           padding: 1rem 0;
         }
 

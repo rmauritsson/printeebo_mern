@@ -1,6 +1,7 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
+//import colors from "colors";
 
 const productRouter = express.Router();
 
@@ -29,7 +30,7 @@ productRouter.get(
       model: "Store",
     });
 
-    console.log("Product in Backend", product);
+    //console.log("Product in Backend", product);
 
     if (product) {
       res.json(product);
