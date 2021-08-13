@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions";
 
-const Product = ({ match }) => {
+const Product = ({ history, match }) => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
   const [chart, setChart] = useState("Adult");
@@ -58,16 +58,7 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
-    //dispatch(listStoreDetails(product.store));
-
-    // console.log("Product Store", product);
-    //console.log("Loading state", loading);
   }, []);
-
-  useEffect(() => {
-    console.log("Order Requirements", orderRequirements);
-    //console.log("selected size", size);
-  }, [chart, color, style, quantity]);
 
   const handleQtyChange = (e) => {
     setQuantity(e.target.value);
@@ -88,6 +79,14 @@ const Product = ({ match }) => {
 
   const handleStyleChange = (event) => {
     setStyle(event.target.value);
+  };
+
+  const addToCartHandler = (event) => {
+    quantity !== "" && size !== "" && color !== "" && style !== ""
+      ? history.push(
+          `/cart/${match.params.id}?qty=${quantity}&&chart=${chart}&&size=${size}&&color=${color}&&style=${style}`
+        )
+      : console.log("Values missing");
   };
 
   return (
@@ -237,21 +236,43 @@ const Product = ({ match }) => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-              <button>
-                Add to cart
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.5 18.5L24 12L17.5 5.5L16.793 6.207L22.086 11.5L0 11.5V12.5L22.086 12.5L16.793 17.793L17.5 18.5Z"
-                    fill="#2E3A59"
-                  />
-                </svg>
-              </button>
+
+              {quantity !== "" &&
+              size !== "" &&
+              color !== "" &&
+              style !== "" ? (
+                <button className="active" onClick={addToCartHandler}>
+                  Add to cart
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5 18.5L24 12L17.5 5.5L16.793 6.207L22.086 11.5L0 11.5V12.5L22.086 12.5L16.793 17.793L17.5 18.5Z"
+                      fill="#2E3A59"
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <button className="disabled">
+                  Add to cart
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5 18.5L24 12L17.5 5.5L16.793 6.207L22.086 11.5L0 11.5V12.5L22.086 12.5L16.793 17.793L17.5 18.5Z"
+                      fill="#2E3A59"
+                    />
+                  </svg>
+                </button>
+              )}
             </div>
             <div className="description_meta">
               <div className="meta_header">
