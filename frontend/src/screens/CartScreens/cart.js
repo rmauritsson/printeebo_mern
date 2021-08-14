@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import queryString from "query-string";
-import { addToCart } from "../../actions/cartActions";
+import { addToCart, removeFromCart } from "../../actions/cartActions";
 
 const Cart = ({ match, location, history }) => {
   let params = queryString.parse(location.search);
@@ -26,15 +26,20 @@ const Cart = ({ match, location, history }) => {
   }, [dispatch, productId, qty, chart, size, color, style]);
 
   const removeItemFromCartHandler = (id) => {
-    console.log(id);
+    dispatch(removeFromCart(id))
   };
+
+  const checkOutHandler = () => {
+    history.push('/login?redirect=shipping')
+  };
+
 
   return (
     <div className="cart">
       <div className="header"></div>
       <div className="description">
         {cartItems.length === 0 ? (
-          "Your Cart is Empty"
+          <h1>Your Cart is Empty</h1>
         ) : (
           <h1>
             Your Cart ({cartItems.length}){" "}
@@ -45,7 +50,7 @@ const Cart = ({ match, location, history }) => {
       <div className="cart_content">
         <div className="description">
           {cartItems.length === 0 ? (
-            "Your Cart is Empty"
+            ""
           ) : (
             <div className="cart_body">
               <table>
@@ -153,7 +158,7 @@ const Cart = ({ match, location, history }) => {
           )}
         </div>
         <div className="summary">
-          <table>
+          {cartItems.length === 0 ? '' : (<table>
             <thead>
               <tr>
                 <th>Order Summary</th>
@@ -203,11 +208,12 @@ const Cart = ({ match, location, history }) => {
               </tr>
               <tr>
                 <td>
-                  <button>CHECK OUT</button>
+                  <button disabled={cartItems.length === 0} onClick={e => checkOutHandler()}>CHECK OUT</button>
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table>)}
+
         </div>
       </div>
       <div className="cart_relatable">**to be added</div>
