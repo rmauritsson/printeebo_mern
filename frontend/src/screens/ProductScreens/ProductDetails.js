@@ -84,8 +84,8 @@ const Product = ({ history, match }) => {
   const addToCartHandler = (event) => {
     quantity !== "" && size !== "" && color !== "" && style !== ""
       ? history.push(
-          `/cart/${match.params.id}?qty=${quantity}&&chart=${chart}&&size=${size}&&color=${color}&&style=${style}`
-        )
+        `/cart/${match.params.id}?qty=${quantity}&&chart=${chart}&&size=${size}&&color=${color}&&style=${style}`
+      )
       : console.log("Values missing");
   };
 
@@ -200,27 +200,27 @@ const Product = ({ history, match }) => {
               <div className="sizechart__body">
                 {chart === "Adult"
                   ? sizeOptions[0].chart.map((chart) => (
-                      <div key={chart} onChange={handleSizeChange}>
-                        <input
-                          type="radio"
-                          id={chart}
-                          value={chart}
-                          name="size"
-                        />
-                        <label htmlFor={chart}> {chart}</label>
-                      </div>
-                    ))
+                    <div key={chart} onChange={handleSizeChange}>
+                      <input
+                        type="radio"
+                        id={chart}
+                        value={chart}
+                        name="size"
+                      />
+                      <label htmlFor={chart}> {chart}</label>
+                    </div>
+                  ))
                   : sizeOptions[1].chart.map((chart) => (
-                      <div key={chart} onChange={handleSizeChange}>
-                        <input
-                          type="radio"
-                          id={chart}
-                          value={chart}
-                          name="size"
-                        />
-                        <label htmlFor={chart}> {chart}</label>
-                      </div>
-                    ))}
+                    <div key={chart} onChange={handleSizeChange}>
+                      <input
+                        type="radio"
+                        id={chart}
+                        value={chart}
+                        name="size"
+                      />
+                      <label htmlFor={chart}> {chart}</label>
+                    </div>
+                  ))}
               </div>
             </div>
             <div className="description_cartinfo">
@@ -238,9 +238,9 @@ const Product = ({ history, match }) => {
               </select>
 
               {quantity !== "" &&
-              size !== "" &&
-              color !== "" &&
-              style !== "" ? (
+                size !== "" &&
+                color !== "" &&
+                style !== "" ? (
                 <button className="active" onClick={addToCartHandler}>
                   Add to cart
                   <svg

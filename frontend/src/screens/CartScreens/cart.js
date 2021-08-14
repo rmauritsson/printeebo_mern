@@ -1,4 +1,8 @@
+import { useEffect } from "react";
+
 const Cart = () => {
+
+
   return (
     <div className="cart">
       <div className="header"></div>
@@ -37,8 +41,8 @@ const Cart = () => {
                     <select
                       name="quantity"
                       id="quantity"
-                      //value={quantity}
-                      // onChange={handleQtyChange}
+                    //value={quantity}
+                    // onChange={handleQtyChange}
                     >
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -100,10 +104,10 @@ const Cart = () => {
             <tr>
               <td>
                 <div className="item_content">
-                  <div className="product_Image">
+                  <div className="item_delivery">
                     <h4>Estimated Delivery</h4>
                   </div>
-                  <div className="cart_description">
+                  <div className="checkout_total">
                     <h4>UGX - 55000</h4>
                   </div>
                 </div>

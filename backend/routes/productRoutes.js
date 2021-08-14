@@ -1,7 +1,7 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
-//import colors from "colors";
+import colors from "colors";
 
 const productRouter = express.Router();
 
@@ -28,9 +28,9 @@ productRouter.get(
     const product = await Product.findById(req.params.id).populate({
       path: "store",
       model: "Store",
-    });
+    }).populate({ path: "category", model: "Category" });
 
-    //console.log("Product in Backend", product);
+    console.log(`Product in Backend: ${product}`.brightMagenta.italic);
 
     if (product) {
       res.json(product);
