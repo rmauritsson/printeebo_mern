@@ -29,6 +29,7 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "mongoose": "^5.13.2",
+    "query-string": "^7.0.1",
     "react-loader-spinner": "^4.0.0"
   },
   "devDependencies": {

@@ -9,7 +9,8 @@ export const addToCart =
             type: CART_ADD_ITEM,
             payload: {
                 product: data._id,
-                name: data.image,
+                name: data.name,
+                image: data.image,
                 description: data.description,
                 price: data.price,
                 qty,

@@ -1106,6 +1106,28 @@ main {
                   font-size: 18px;
                   font-weight: $semibold;
                   color: #0000ff;
+                  text-decoration: none;
+
+                  h3 {
+                    color: $fontColor;
+                  }
+                }
+
+                .cart_actions {
+                  margin-top: 0.5rem;
+                  display: flex;
+                  align-items: center;
+
+                  button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  }
+
+                  h6 {
+                    margin: 0 1rem;
+                    cursor: pointer;
+                  }
                 }
               }
             }

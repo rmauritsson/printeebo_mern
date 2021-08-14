@@ -16,6 +16,7 @@ function App() {
         <Route path="/product/:id" component={Product} />
         <Route path="/store/:id" component={Store} />
         <Route path="/category/:id" component={Category} />
+        <Route path="/cart" component={Cart} />
         <Route path="/cart/:id" component={Cart} />
       </main>
       <Footer />
