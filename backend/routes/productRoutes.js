@@ -1,44 +1,10 @@
 import express from "express";
-import asyncHandler from "express-async-handler";
-import Product from "../models/productModel.js";
-import colors from "colors";
+import { getProducts, getProductById } from "../controllers/productController.js";
 
 const productRouter = express.Router();
 
-// @desc Fetch all products
-// @route GET /api/products
-// @access PUBLIC
+productRouter.route('/').get(getProducts)
 
-productRouter.get(
-  "/",
-  asyncHandler(async (req, res) => {
-    const products = await Product.find({});
-
-    res.json(products);
-  })
-);
-
-// @desc Fetch single product
-// @route GET /api/products/id
-// @access PUBLIC
-
-productRouter.get(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const product = await Product.findById(req.params.id).populate({
-      path: "store",
-      model: "Store",
-    }).populate({ path: "category", model: "Category" });
-
-    console.log(`Product in Backend: ${product}`.brightMagenta.italic);
-
-    if (product) {
-      res.json(product);
-    } else {
-      res.status(404);
-      throw new Error("Product not found");
-    }
-  })
-);
+productRouter.route('/:id').get(getProductById)
 
 export default productRouter;
