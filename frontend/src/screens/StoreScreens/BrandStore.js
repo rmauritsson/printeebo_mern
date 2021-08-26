@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../ProductScreens/ProductCard";
 import { listStoreDetails } from "../../actions/storeActions";
+import { listProducts } from "../../actions/productActions";
 
 const Store = ({ match }) => {
   const dispatch = useDispatch();
@@ -11,11 +12,24 @@ const Store = ({ match }) => {
   const { loading, store, error } = storeDetails;
   console.log("Store Found", store);
 
+  const productList = useSelector((state) => state.productList);
+  const products = productList.products;
+
+  console.log("Products Found", products);
+
+  let myStore = []
+
+
+
+
   useEffect(() => {
     //dispatch(listProducts());
+    dispatch(listProducts());
     dispatch(listStoreDetails(match.params.id));
 
-    console.log("Store ID", match.params.id);
+    //console.log("Store ID", match.params.id);
+    //myStore = products.filter(x => x.store === match.params.id)
+    //console.log("Product in Store Found", myStore);
 
     // const storeList = products.filter(
     // (product) => product.store === match.params.id
@@ -53,7 +67,11 @@ const Store = ({ match }) => {
           <p>About</p>
         </div>
       </div>
-      <div className="store_content"></div>
+      <div className="store_content">
+        {
+          myStore ? 'No Products' : 'Products'
+        }
+      </div>
       <div className="store_pagination"></div>
       <div className="store_shareOptions">
         <h3>Share this Store</h3>

@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import { listProducts } from "../../actions/productActions";
 import { listCategories } from "../../actions/categoryActions";
 import { listStores } from "../../actions/storeActions";
-import LoadingSpinner from "../../components/Loader";
 
 const Home = () => {
   const dispatch = useDispatch();

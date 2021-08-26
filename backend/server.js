@@ -6,6 +6,7 @@ import colors from "colors";
 import productRouter from "./routes/productRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
 import storeRouter from "./routes/storeRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -13,6 +14,9 @@ connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Accept Json data
+app.use(express.json())
 
 //GET
 app.get("/", (req, res) => {
@@ -22,6 +26,7 @@ app.get("/", (req, res) => {
 app.use("/api/products", productRouter);
 app.use("/api/stores", storeRouter);
 app.use("/api/categories/", categoryRouter);
+app.use("/api/users/", userRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
