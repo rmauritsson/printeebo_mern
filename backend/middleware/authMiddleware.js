@@ -14,7 +14,7 @@ const protectRoute = asyncHandler(async (req, res, next) => {
             // get user but hide the password
             req.user = await User.findById(decoded.id).select('-password')
 
-            console.log('User', req.user)
+            //console.log('User', req.user)
 
 
         } catch (error) {
@@ -28,6 +28,8 @@ const protectRoute = asyncHandler(async (req, res, next) => {
         res.status(401)
         throw new Error('Not authorized, No token')
     }
+
+    next()
 
 })
 
