@@ -6,6 +6,8 @@ import Product from "./screens/ProductScreens/ProductDetails";
 import Store from "./screens/StoreScreens/BrandStore";
 import Category from "./screens/CategoryScreens/CategoryDetails";
 import Cart from "./screens/CartScreens/cart";
+import Login from "./screens/UserActionScreens/login";
+import Signup from "./screens/UserActionScreens/signup";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Header />
       <main>
         <Route path="/" component={Home} exact />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="/product/:id" component={Product} />
         <Route path="/store/:id" component={Store} />
         <Route path="/category/:id" component={Category} />
