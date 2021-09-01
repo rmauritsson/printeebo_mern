@@ -112,6 +112,30 @@ footer {
       padding-left: 1rem;
     }
 
+    .headerItem {
+      padding: 0.25rem 2rem;
+      padding-left: 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .logout {
+      cursor: pointer;
+    }
+
+    p {
+      padding: 0.25rem 2rem;
+      padding-left: 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
     a {
       text-transform: uppercase;
       text-decoration: none;

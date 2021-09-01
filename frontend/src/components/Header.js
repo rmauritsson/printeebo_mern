@@ -1,11 +1,23 @@
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { FaUserAlt } from "react-icons/fa";
 import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { logout } from "../actions/userActions";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = (e) => {
+    dispatch(logout());
+  };
+
   return (
     <header className="header">
       <div className="header_top">
+        {userInfo ? <p>Hi, {userInfo.name} </p> : ""}
         <div>
           <Link to="/help">Help</Link>
         </div>
@@ -15,12 +27,22 @@ const Header = () => {
         <div>
           <Link to="/store">Sell Your Art</Link>
         </div>
-        <div>
-          <Link to="/signup">Signup</Link>
-        </div>
-        <div>
-          <Link to="/login">Login</Link>
-        </div>
+        {userInfo ? (
+          <>
+            <div className="headerItem logout" onClick={logoutHandler}>
+              Logout
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <Link to="/signup">Signup</Link>
+            </div>
+            <div>
+              <Link to="/login">Login</Link>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="header_main">
