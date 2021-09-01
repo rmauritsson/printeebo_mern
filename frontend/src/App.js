@@ -6,8 +6,8 @@ import Product from "./screens/ProductScreens/ProductDetails";
 import Store from "./screens/StoreScreens/BrandStore";
 import Category from "./screens/CategoryScreens/CategoryDetails";
 import Cart from "./screens/CartScreens/cart";
-import Login from "./screens/UserActionScreens/login";
-import Signup from "./screens/UserActionScreens/signup";
+import Login from "./screens/UserActionScreens/Login";
+import Signup from "./screens/UserActionScreens/Signup";
 
 function App() {
   return (
