@@ -1,4 +1,9 @@
+
 const CreateBanner = () => {
+  const saleArtHandler = e => {
+
+
+  }
   return (
     <div className="banner">
       <div className="banner_list">
@@ -14,7 +19,8 @@ const CreateBanner = () => {
         <img src="/images/ready_to_sell.jpg" alt="banner" />
         <div className="banner_list_middle__inner">
           <h3>Ready to Sale Your Art?</h3>
-          <button>
+          <button className='clickable' onClick={saleArtHandler}>
+
             Sign Up
             <svg
               width="24"

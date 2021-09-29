@@ -12,7 +12,8 @@ const rootReducer = combineReducers({
   storeDetails: storeDetailsReducer,
   categoryList: categoryReducer,
   cart: cartReducer,
-  userLogin: userLoginReducer
+  userLogin: userLoginReducer,
+  userRegister: userLoginReducer
 });
 
 export default rootReducer;

@@ -50,7 +50,7 @@ const Login = ({ location, history }) => {
                 <div className="form_header">
                     <h1>Log in to Printeebo</h1>
                     <p>
-                        Don't have an account? <Link to={redirect ? `/signup?reiderect=${redirect}` : '/signup'}>Sign up free</Link>
+                        Don't have an account? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Sign up free</Link>
                     </p>
                 </div>
                 <div className="form_socials">

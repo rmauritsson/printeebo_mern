@@ -25,6 +25,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 footer {
   max-width: 1440px;
   margin: auto;
@@ -1473,6 +1477,187 @@ main {
   .register {
     max-width: 1440px;
     margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 60% 40%;
+
+    .login_description {
+      background-color: #530e30;
+      font-family: $epilogue;
+      font-style: $normal;
+      padding: 6rem 5rem 10rem 5rem;
+
+      .login_logo {
+        height: 50px;
+        width: 215px;
+        margin-bottom: 5rem;
+      }
+      .login_header {
+        h1 {
+          font-weight: 600;
+          font-size: 71px;
+          line-height: 73px;
+
+          color: #58c0d0;
+        }
+      }
+
+      .login_body {
+        font-weight: $normal;
+        font-size: 24px;
+        line-height: 25px;
+
+        color: #ffffff;
+      }
+    }
+
+    .login_form {
+      background-color: #ebf5f7;
+      padding: 5rem;
+
+      .form_header {
+        text-align: center;
+        padding-bottom: 1rem;
+        h1 {
+          font-family: Epilogue;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 29px;
+          line-height: 30px;
+          /* identical to box height */
+        }
+
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 21px;
+
+          a {
+            text-decoration: none;
+            color: #0000ff;
+          }
+        }
+
+        color: #181932;
+      }
+
+      .form_socials {
+        display: flex;
+
+        button {
+          display: flex;
+          width: 185px;
+          height: 36px;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: none;
+          border-radius: 25px;
+        }
+
+        .google {
+          padding: 10px;
+          button {
+            background: #4285f4;
+          }
+
+          svg {
+            height: 15px;
+            padding-right: 0.5rem;
+            path {
+              fill: white;
+            }
+          }
+        }
+
+        .facebook {
+          padding: 10px;
+          button {
+            background: #4267b2;
+          }
+
+          svg {
+            height: 15px;
+            padding-right: 0.5rem;
+            path {
+              fill: white;
+            }
+          }
+        }
+      }
+
+      .divider {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        hr {
+          width: 20%;
+        }
+
+        p {
+          margin: 0 1rem;
+        }
+      }
+
+      .form_inheret {
+        .form_control {
+          display: grid;
+          margin-bottom: 1rem;
+
+          label {
+            height: 21px;
+
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.01em;
+
+            color: #181932;
+          }
+
+          input {
+            height: 48px;
+            padding: 0 1rem;
+            background: #ebf5f7;
+            border: 1px solid #8795a1;
+            box-sizing: border-box;
+            border-radius: 5px;
+          }
+        }
+        button {
+          margin-top: 2rem;
+          height: 48px;
+          width: 100%;
+          background: #0000ff;
+          border-radius: 30px;
+          font-family: $epilogue;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 19px;
+          line-height: 19px;
+          text-transform: uppercase;
+          border: none;
+          color: #ffffff;
+        }
+
+        p {
+          /* By logging in you agree to our Terms of Service and Privacy Policy */
+          margin-top: 1rem;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 17px;
+          /* identical to box height */
+          text-align: center;
+          letter-spacing: -0.05em;
+
+          color: #181932;
+        }
+      }
+    }
   }
 
   //End of User Authentication

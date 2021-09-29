@@ -7,7 +7,7 @@ import Store from "./screens/StoreScreens/BrandStore";
 import Category from "./screens/CategoryScreens/CategoryDetails";
 import Cart from "./screens/CartScreens/cart";
 import Login from "./screens/UserActionScreens/Login";
-import Signup from "./screens/UserActionScreens/Signup";
+import Register from "./screens/UserActionScreens/Register";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <main>
         <Route path="/" component={Home} exact />
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/register" component={Register} />
         <Route path="/product/:id" component={Product} />
         <Route path="/store/:id" component={Store} />
         <Route path="/category/:id" component={Category} />
