@@ -21,7 +21,7 @@ const Header = () => {
         <div>
           <Link to="/help">Help</Link>
         </div>
-        <div>
+        <div className="text-red-600">
           <Link to="#">Track Order</Link>
         </div>
         <div>
