@@ -80,6 +80,7 @@ export const register = (name, email, password, phone, isAdmin, isBuyer, isCreat
         });
 
         localStorage.setItem("userInfo", JSON.stringify(data));
+
     } catch (error) {
         dispatch({
             type: USER_REGISTER_FAIL,

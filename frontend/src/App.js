@@ -8,6 +8,7 @@ import Category from "./screens/CategoryScreens/CategoryDetails";
 import Cart from "./screens/CartScreens/cart";
 import Login from "./screens/UserActionScreens/Login";
 import Register from "./screens/UserActionScreens/Register";
+import Shipping from "./screens/ShippingScreens/Shipping";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/category/:id" component={Category} />
         <Route path="/cart" component={Cart} />
         <Route path="/cart/:id" component={Cart} />
+        <Route path='/shipping' component={Shipping} />
       </main>
       <Footer />
     </Router>

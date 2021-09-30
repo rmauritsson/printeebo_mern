@@ -13,6 +13,7 @@ const Login = ({ location, history }) => {
 
     const userLogin = useSelector(state => state.userLogin)
     const { loading, error, userInfo } = userLogin
+    console.log('User Login Payload', userLogin)
 
     useEffect(() => {
         if (userInfo) {

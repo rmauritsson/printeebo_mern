@@ -20,6 +20,7 @@ const Register = ({ location, history }) => {
 
     const userRegister = useSelector((state) => state.userRegister);
     const { loading, error, userInfo } = userRegister;
+    console.log('User Register Payload', userRegister)
 
     const redirect = location.search ? location.search.split("=")[1] : "/";
 
@@ -32,8 +33,15 @@ const Register = ({ location, history }) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
+
+
         //check confirm password before dispatch
-        dispatch(register(name, email, password, phone, isBuyer, isCreator, isAdmin));
+        if (password !== confirmPassword) {
+            alert('Passwords dont match')
+        } else {
+            dispatch(register(name, email, password, phone, isBuyer, isCreator, isAdmin));
+        }
+
     };
 
     return (
@@ -71,6 +79,8 @@ const Register = ({ location, history }) => {
                 </div>
                 <div className="form_inheret">
                     {error && <p>{message}</p>}
+                    {error && <p>{error}</p>}
+                    {loading && <p>Loading ......</p>}
                     <form onSubmit={submitHandler}>
                         <div className="form_control">
                             <label htmlFor="name">Name</label>
