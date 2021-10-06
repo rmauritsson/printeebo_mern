@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className="h-18">
       <div className="bg-gray-200 flex py-2 px-12">
         <div className='container mx-auto text-sm flex justify-end font-inter font-semibold'>
           {userInfo ? <p>Hi, {userInfo.name} </p> : ""}
